@@ -830,17 +830,101 @@ body {
     animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
 }
-/* Specific fix for email to prevent overflow */
-.contact-detail .fa-envelope + span {
-    word-break: break-all;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    max-width: calc(100% - 60px);
+/* Contact Section - Responsive with Larger Box */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    background: white;
+    border-radius: 32px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(43, 5, 112, 0.08);
+    border: 1px solid #F0E9FA;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.contact-detail i {
+    font-size: 1.3rem;
+    width: 48px;
+    height: 48px;
+    background: #F9F5FF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    color: #2B0570;
+    flex-shrink: 0;
+}
+
+.contact-detail span {
+    font-size: 1rem;
+    color: #4A5568;
+    line-height: 1.4;
+    word-break: break-word;
+    flex: 1;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .contact-detail .fa-envelope + span {
-        max-width: calc(100% - 50px);
+    .contact-container {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-wrapper {
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+        border-radius: 28px;
+    }
+    
+    .contact-detail {
+        gap: 0.8rem;
+        margin: 1.2rem 0;
+    }
+    
+    .contact-detail i {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-detail span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-wrapper {
+        padding: 1.5rem 1rem;
+    }
+    
+    .contact-detail {
+        gap: 0.7rem;
+    }
+    
+    .contact-detail i {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    .contact-detail span {
         font-size: 0.85rem;
     }
 }
