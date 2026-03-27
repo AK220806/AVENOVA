@@ -830,6 +830,20 @@ body {
     animation: fadeInUp 0.5s ease forwards;
     opacity: 0;
 }
+/* Specific fix for email to prevent overflow */
+.contact-detail .fa-envelope + span {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: calc(100% - 60px);
+}
+
+@media (max-width: 768px) {
+    .contact-detail .fa-envelope + span {
+        max-width: calc(100% - 50px);
+        font-size: 0.85rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -1004,7 +1018,7 @@ body {
         </div>
         <div class="footer-links">
             <h4>Quick Links</h4>
-            <ul><li><a href="#" data-page="home" class="footer-nav-link">Home</a></li><li><a href="#" data-page="services" class="footer-nav-link">Services</a></li><li><a href="#" data-page="projects" class="footer-nav-link">Projects</a></li></ul>
+            <ul><li><a href="#" data-page="home" class="footer-nav-link">Home</a></li><li><a href="#" data-page="services" class="footer-nav-link">Services</a></li><li><a href="#" data-page="projects" class="footer-nav-link">Projects</a></li><li><a href="#" data-page="contact" class="footer-nav-link">Contact</a></li></ul>
         </div>
         <div class="footer-contact-info">
             <h4>Contact Info</h4>
@@ -1037,8 +1051,8 @@ body {
 
     // Projects Data with folder-based screenshots
     const projectsData = [
-        { id: "classroom", name: "Digital Classroom Management System", tag: "Education", desc: "A comprehensive web-based classroom management system using <b>C# and ASP.NET</b>, featuring student and course management, Exam, performance analytics.", tech: ["C#", "ASP.NET", "SQL Server"], screenshots: ["images/projects/classroom/login.png", "images/projects/classroom/dashboard.png", "images/projects/classroom/profile.png", "images/projects/classroom/course.png", "images/projects/classroom/action.png", "images/projects/classroom/action.png"] },
-        { id: "exam", name: "Online Exam Management System", tag: "Evaluation", desc: "Web based examination system developed using <b>C# and ASP.NET</b>, enabling online tests with automatic evaluation, result generation, timer functionality and secure user authentication.", tech: ["C#", "ASP.NET", "SQL Server","AJAX"], screenshots: ["images/projects/exam/loginq.png", "images/projects/exam/category.png", "images/projects/exam/dash.png", "images/projects/exam/que.png", "images/projects/exam/stud.png", "images/projects/exam/exams.png"] },
+        { id: "classroom", name: "Digital Classroom Management System", tag: "Education", desc: "A comprehensive web-based classroom management system using <b>C# and ASP.NET<b>, featuring student and course management, Exam, performance analytics.", tech: ["C#", "ASP.NET", "SQL Server"], screenshots: ["images/projects/classroom/login.png", "images/projects/classroom/dashboard.png", "images/projects/classroom/profile.png", "images/projects/classroom/course.png", "images/projects/classroom/action.png", "images/projects/classroom/action.png"] },
+        { id: "exam", name: "Online Exam Management System", tag: "Evaluation", desc: "Web based examination system developed using <b>C# and ASP.NET<b>, enabling online tests with automatic evaluation, result generation, timer functionality and secure user authentication.", tech: ["C#", "ASP.NET", "SQL Server","AJAX"], screenshots: ["images/projects/exam/loginq.png", "images/projects/exam/category.png", "images/projects/exam/dash.png", "images/projects/exam/que.png", "images/projects/exam/stud.png", "images/projects/exam/exams.png"] },
         { id: "vehicle", name: "Vehicle Ad Campaign", tag: "Tracking & Analysis", desc: "A complete system to record vehicle kilometers, upload proof, generate bills, analyse real campaign performance.", tech: ["PHP", "MySQL"], screenshots: ["images/projects/vehicle/1.png", "images/projects/vehicle/2.png", "images/projects/vehicle/4.png", "images/projects/vehicle/5.png"] },
         { id: "track", name: "Real Time Tracking", tag: "Vehicle Tracking", desc: "It's used to monitor the live location and movement of a vehicle using phone's location. It helps owners or companies track routes and vehicle safety.", tech: ["JavaScript", "Firebase"], screenshots: ["images/projects/track/1.png", "images/projects/track/2.png", "images/projects/track/3.png"] }
     ];
