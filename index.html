@@ -664,88 +664,31 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
 }
+/* Footer Styles - Corrected with Logo Image Support */
+.main-footer {
+    background: linear-gradient(135deg, #0F172A, #1E1A2F, #2B0570);
+    color: #E0D3E8;
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Footer Logo Section */
 .footer-logo-section .footer-logo {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 1rem;
 }
-.footer-logo-section .footer-logo-icon {
-    background: linear-gradient(135deg, #DB2777, #EC489A);
-    width: 45px;
-    height: 45px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.footer-logo-section .footer-logo-icon i {
-    font-size: 24px;
-    color: white;
-}
-.footer-logo-section h2 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #FFFFFF;
-}
-.footer-logo-section p {
-    color: #C9BCE0;
-    margin-top: 0.8rem;
-    line-height: 1.6;
-}
-.footer-links h4 {
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-    color: #FFB7D0;
-    font-weight: 600;
-}
-.footer-links ul {
-    list-style: none;
-}
-.footer-links li {
-    margin-bottom: 0.7rem;
-}
-.footer-links a {
-    color: #C9BCE0;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.footer-links a:hover {
-    color: #FFB7D0;
-}
-.footer-contact-info h4 {
-    font-size: 1.1rem;
-    margin-bottom: 1.2rem;
-    color: #FFB7D0;
-    font-weight: 600;
-}
-.footer-contact-info p {
-    margin-bottom: 0.6rem;
-    color: #C9BCE0;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.footer-contact-info i {
-    width: 24px;
-    color: #DB2777;
-}
-.footer-bottom {
-    text-align: center;
-    padding: 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: #B8A9D9;
-    font-size: 0.85rem;
-}
-        .footer-logo-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 10px;
-}
 
-.footer-logo-icon {
-    background: linear-gradient(135deg, #DB2777, #EC489A);
+.footer-logo-section .footer-logo-icon {
     width: 45px;
     height: 45px;
     border-radius: 14px;
@@ -753,8 +696,120 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
+/* For gradient background when icon is used */
+.footer-logo-section .footer-logo-icon.has-icon {
+    background: linear-gradient(135deg, #DB2777, #EC489A);
+}
+
+/* For image logo */
+.footer-logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* For icon fallback */
+.footer-logo-section .footer-logo-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.footer-logo-section h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.footer-logo-section p {
+    color: #C9BCE0;
+    margin-top: 0.8rem;
+    line-height: 1.6;
+}
+
+/* Footer Links */
+.footer-links h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: #FFB7D0;
+    font-weight: 600;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+    color: #C9BCE0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #FFB7D0;
+}
+
+/* Footer Contact Info */
+.footer-contact-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    color: #FFB7D0;
+    font-weight: 600;
+}
+
+.footer-contact-info p {
+    margin-bottom: 0.6rem;
+    color: #C9BCE0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact-info i {
+    width: 24px;
+    color: #DB2777;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #B8A9D9;
+    font-size: 0.85rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .footer-logo-section .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-contact-info p {
+        justify-content: center;
+    }
+    
+    .footer-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
 /* Modal */
 .modal {
     display: none;
@@ -1151,30 +1206,35 @@ body {
 
 <footer class="main-footer">
     <div class="footer-content">
-        <div class="footer-logo">
-    <div class="footer-logo-icon">
-        <img src="images/avenova-logo.jpg" alt="AVENOVA Technologies" class="footer-logo-image">
-    </div>
-    <h2>AVENOVA</h2>
-</div>
+        <div class="footer-logo-section">
+            <div class="footer-logo">
+                <div class="footer-logo-icon">
+                    <img src="images/avenova-logo.png" alt="AVENOVA Technologies" class="footer-logo-image" onerror="this.onerror=null; this.parentElement.classList.add('has-icon'); this.parentElement.innerHTML='<i class=\'fas fa-microchip\'></i>'">
+                </div>
+                <h2>AVENOVA</h2>
+            </div>
             <p>Transforming ideas into digital reality with cutting-edge technology and innovative solutions.</p>
         </div>
         <div class="footer-links">
             <h4>Quick Links</h4>
-            <ul><li><a href="#" data-page="home" class="footer-nav-link">Home</a></li><li><a href="#" data-page="services" class="footer-nav-link">Services</a></li><li><a href="#" data-page="projects" class="footer-nav-link">Projects</a></li><li><a href="#" data-page="contact" class="footer-nav-link">Contact</a></li></ul>
+            <ul>
+                <li><a href="#" data-page="home" class="footer-nav-link">Home</a></li>
+                <li><a href="#" data-page="services" class="footer-nav-link">Services</a></li>
+                <li><a href="#" data-page="projects" class="footer-nav-link">Projects</a></li>
+                <li><a href="#" data-page="contact" class="footer-nav-link">Contact</a></li>
+            </ul>
         </div>
         <div class="footer-contact-info">
             <h4>Contact Info</h4>
             <p><i class="fas fa-phone-alt"></i> +91 8122388402</p>
             <p><i class="fas fa-envelope"></i> avenovatechnologies@gmail.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Tirunelveli</p>
+            <p><i class="fas fa-map-marker-alt"></i> Tirunelveli, India</p>
         </div>
     </div>
     <div class="footer-bottom">
-    <p>© <script>document.write(new Date().getFullYear());</script> AVENOVA Technologies. All rights reserved. | Innovating Tomorrow, Today.</p>
-</div>
+        <p>© <script>document.write(new Date().getFullYear());</script> AVENOVA Technologies. All rights reserved. | Innovating Tomorrow, Today.</p>
+    </div>
 </footer>
-
 <div id="screenshotModal" class="modal"><div class="modal-content"><div class="modal-header"><h3 id="modalTitle">Project Screenshots</h3><button class="close-modal" id="closeModalBtn">&times;</button></div><div class="screenshots-gallery" id="screenshotsGallery"></div></div></div>
 
 <script>
